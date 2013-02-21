@@ -3,13 +3,11 @@ PRODUCT_BRAND ?= liquid
 
 # build
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_DISPLAY_ID="Liquid ICS v1.5 MR2"
+    BUILD_DISPLAY_ID="Liquid ICS v1.6"
 
 # overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
-    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
-    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.com.android.dateformat=MM-dd-yyyy \
@@ -17,7 +15,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     ro.media.enc.jpeg.quality=100 \
     ro.kernel.android.checkjni=0 \
-    ro.ril.disable.power.collapse=1 \
     pm.sleep_mode=1 \
     persist.sys.camera-sound=1 \
     drm.service.enabled=true
@@ -49,6 +46,10 @@ PRODUCT_COPY_FILES += \
     vendor/liquid/prebuilt/common/bin/fdisk:system/bin/fdisk \
     vendor/liquid/prebuilt/common/bin/Hostapd:system/bin/Hostapd \
     vendor/liquid/prebuilt/common/bin/sysinit:system/bin/sysinit
+
+# Bluetooth configuration files
+PRODUCT_COPY_FILES += \
+    system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
 
 # etc
 PRODUCT_COPY_FILES += \
@@ -93,9 +94,9 @@ PRODUCT_COPY_FILES += \
     vendor/liquid/prebuilt/common/app/OneTimeInitializer.apk:system/app/OneTimeInitializer.apk \
     vendor/liquid/prebuilt/common/app/Phonesky.apk:system/app/Phonesky.apk \
     vendor/liquid/prebuilt/common/app/SetupWizard.apk:system/app/SetupWizard.apk \
+    vendor/liquid/prebuilt/common/app/SuperSU.apk:system/app/SuperSU.apk \
     vendor/liquid/prebuilt/common/app/Talk.apk:system/app/Talk.apk \
     vendor/liquid/prebuilt/common/app/Torch.apk:system/app/Torch.apk \
-    vendor/liquid/prebuilt/common/app/Usb.apk:system/app/Usb.apk \
     vendor/liquid/prebuilt/common/app/VoiceSearch.apk:system/app/VoiceSearch.apk
 
 # library
@@ -111,7 +112,6 @@ PRODUCT_COPY_FILES += \
     vendor/liquid/prebuilt/common/lib/libfilterpack_facedetect.so:system/lib/libfilterpack_facedetect.so \
     vendor/liquid/prebuilt/common/lib/libOMX.TI.JPEG.decoder.so:system/lib/libOMX.TI.JPEG.decoder.so \
     vendor/liquid/prebuilt/common/lib/libOMX.TI.VPP.so:system/lib/libOMX.TI.VPP.so \
-    vendor/liquid/prebuilt/common/lib/dsp/720p_m4venc_sn.dll64P:system/lib/dsp/720p_m4venc_sn.dll64P \
     vendor/liquid/prebuilt/common/lib/egl/libeglinfo.so:system/lib/egl/libeglinfo.so \
     vendor/liquid/prebuilt/common/lib/egl/libgles1_texture_stream.so:system/lib/egl/libgles1_texture_stream.so \
     vendor/liquid/prebuilt/common/lib/egl/libgles2_texture_stream.so:system/lib/egl/libgles2_texture_stream.so \
