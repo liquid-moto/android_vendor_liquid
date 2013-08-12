@@ -24,13 +24,13 @@ if [ -z "$OUT" -o ! -d "$OUT" ]; then
 fi
 
 if [ "$TARGET_BUILD_TYPE" = "debug" ]; then
-    OTAPACKAGE=$OUT/${TARGET_PRODUCT}_debug-ota-$TARGET_BUILD_VARIANT.v1.6.zip
+    OTAPACKAGE=$OUT/${TARGET_PRODUCT}_debug-ota-$TARGET_BUILD_VARIANT-v2.0.zip
 elif [ "$TARGET_BUILD_VARIANT" = "userdebug" ]; then
-    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ics.v1.6.zip
+    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ics-v2.0.zip
 elif [ "$TARGET_BUILD_VARIANT" = "user" ]; then
-    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ics.v1.6.zip
+    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ics-v2.0.zip
 else
-    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ics-$TARGET_BUILD_VARIANT.v1.6.zip
+    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ics-$TARGET_BUILD_VARIANT-v2.0.zip
 fi
 if [ ! -f "$OTAPACKAGE" ]; then
 	echo "$OTAPACKAGE doesn't exist!";
