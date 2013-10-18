@@ -28,7 +28,7 @@ PRODUCT_PACKAGES += \
     Galaxy4 \
     PhaseBeam \
     NoiseField \
-    DSPManager
+	DSPManager
 
 # tmobile
 PRODUCT_PACKAGES += \
@@ -41,8 +41,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/liquid/overlay/common
 
 # binary
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/bin/dspexec:system/bin/dspexec \
-    vendor/liquid/prebuilt/common/bin/e2fsck:system/bin/e2fsck \
+	vendor/liquid/prebuilt/common/bin/e2fsck:system/bin/e2fsck \
     vendor/liquid/prebuilt/common/bin/fdisk:system/bin/fdisk \
     vendor/liquid/prebuilt/common/bin/Hostapd:system/bin/Hostapd \
     vendor/liquid/prebuilt/common/bin/sysinit:system/bin/sysinit
