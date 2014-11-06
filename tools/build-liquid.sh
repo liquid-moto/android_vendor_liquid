@@ -220,7 +220,11 @@ rm -f $OUTDIR/target/product/$device/liquid_*-ota*.zip
 # finished? get elapsed time
 t2=$($DATE +%s)
 
-tmin=$(( (t2-t1)/60 ))
+thr=$(( (t2-t1)/3600 ))
+if [ "$thr" -gt 0 ]; then
+  thour="$thr hours "
+fi
+tmin=$(( ((t2-t1)%3600)/60 ))
 tsec=$(( (t2-t1)%60 ))
 
-echo -e ${bldgrn}"Total time elapsed:${txtrst} ${grn}$tmin minutes $tsec seconds"${txtrst}
+echo -e ${bldgrn}"Total time elapsed:${txtrst} ${grn}$thour$tmin minutes $tsec seconds"${txtrst}
